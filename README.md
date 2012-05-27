@@ -1,4 +1,4 @@
-# What is jasmine\_assets\_enabler
+# What is jasmine\_assets\_enabler?
 
 This is a minimal Rails application with support for the asset pipeline
 bundled with the Jasmine specs runner.
