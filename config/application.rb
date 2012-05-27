@@ -13,6 +13,7 @@ Bundler.require(*Rails.groups(:assets => %w(development test)))
 
 module Specs
   class Application < Rails::Application
+    config.root = File.expand_path '../..', __FILE__ if File.exists? 'spec_runner'
     config.active_support.deprecation = :log
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -45,13 +46,13 @@ module Specs
     # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
     # config.assets.precompile += %w( search.js )
 
-    config.sandbox_assets.template = 'jasmine/runner'
+    #config.sandbox_assets.template = 'jasmine/runner' # already set by the jasmine:serve task
 
     config.assets.paths.concat %w(spec/assets/css spec/assets/js spec/assets/images)
 
     # Example for enabling Grails assets under web-app:
-    #config.assets.paths.concat %w(web-app/js web-app/css)
+    #config.assets.paths.concat %w(../web-app/js ../web-app/css)
 
-    config.logger = ActiveSupport::BufferedLogger.new(Rails.root.join('spec/log/server.log'))
+    config.logger = ActiveSupport::BufferedLogger.new(Rails.root.join('log/server.log'))
   end
 end

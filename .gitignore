@@ -8,5 +8,5 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/spec/log/*.log
+/log/*.log
 /tmp

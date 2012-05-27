@@ -6,7 +6,7 @@ bundled with the Jasmine specs runner.
 There are some examples bundled with this app. Just copy these files to
 your (non-Rails) project root and run:
 
-    rake sandbox_assets:serve
+    rake jasmine:serve
 
 Then browse to http://localhost:5000 and start coding your specs in Jasmine.
 
