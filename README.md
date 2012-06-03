@@ -13,6 +13,6 @@ your (non-Rails) project root and run:
 
 Then browse to http://localhost:5000 and start coding your specs in Jasmine.
 
-Take a look at [this Jasmine enabled Grails sample application](https://github.com/rosenfeld/grails-jasmine).
+Take a look at [this oojs enabled Grails sample application](https://github.com/rosenfeld/grails-oojs).
 
 Happy coding! :)
