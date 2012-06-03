@@ -13,6 +13,7 @@ require application_path
 
 #Specs::Application.load_tasks
 SandboxAssets::Engine.load_tasks
+Oojs::Engine.load_generators
 
 # this task is not required if Application.load_tasks is called instead:
 # we do this to filter the available tasks shown in "rake -T"
@@ -26,5 +27,23 @@ namespace :jasmine do
   task :serve do
     SandboxAssets::Engine.config.sandbox_assets.template = 'jasmine/runner'
     Rake::Task["sandbox_assets:serve"].invoke
+  end
+
+  desc "generates a sample spec_helper.js.coffee"
+  task spec_helper: :environment do
+    ARGV.shift
+    Rails::Generators.invoke 'oojs:spec_helper', ARGV, behavior: :invoke, destination_root: Rails.root
+  end
+
+  desc "generates a sample spec"
+  task spec: :environment do
+    ARGV.shift
+    if name = ARGV.find{|a| a =~ /^--name=(.+)/}
+      name = name.sub /^--name=/, ''
+    else
+      puts "You must specify the spec name. Use it like rake jasmine:spec -- --name=shopping_cart\n\n"
+      name = '--help'
+    end
+    Rails::Generators.invoke 'oojs:spec', [name], behavior: :invoke, destination_root: Rails.root
   end
 end

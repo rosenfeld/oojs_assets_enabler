@@ -15,7 +15,5 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'rails_sandbox_jasmine'
+  gem 'oojs'
 end
-
-#gem 'jquery-rails'
