@@ -12,6 +12,9 @@ Just copy these files to your (non-Rails) project root and run:
 
 Then browse to http://localhost:5000 and see your specs passing.
 
+Alternatively you can add this repository to some subdirectory and optionally
+symlink Rakefile to your root app.
+
 Take a look at [this oojs enabled Grails sample application](https://github.com/rosenfeld/grails-oojs).
 
 Happy coding! :)
