@@ -1,4 +1,3 @@
-#!/usr/bin/env rake
 # Add your own tasks in files placed in lib/tasks ending in .rake,
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
@@ -21,11 +20,11 @@ task :environment do
   require File.expand_path '../environment', application_path
 end
 
-namespace :jasmine do
-  desc "Run Jasmine spec runner"
+namespace :oojs do
+  desc "Run oojspec spec-runner"
   #task :serve => 'sandbox_assets:serve'
   task :serve do
-    SandboxAssets::Engine.config.sandbox_assets.template = 'jasmine/runner'
+    SandboxAssets::Engine.config.sandbox_assets.template = 'oojspec/runner'
     Rake::Task["sandbox_assets:serve"].invoke
   end
 
@@ -41,7 +40,7 @@ namespace :jasmine do
     if name = ARGV.find{|a| a =~ /^--name=(.+)/}
       name = name.sub /^--name=/, ''
     else
-      puts "You must specify the spec name. Use it like rake jasmine:spec -- --name=shopping_cart\n\n"
+      puts "You must specify the spec name. Use it like rake oojs:spec -- --name=shopping_cart\n\n"
       name = '--help'
     end
     Rails::Generators.invoke 'oojs:spec', [name], behavior: :invoke, destination_root: Rails.root

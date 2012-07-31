@@ -1,14 +1,14 @@
-# What is jasmine\_assets\_enabler?
+# What is oojs\_assets\_enabler?
 
 This is a minimal Rails application with support for the asset pipeline
-bundled with the Jasmine specs runner. This branch also provides integration
-with the [oojs](http://github.com/rosenfeld/oojs) gem.
+bundled with the [oojspec](https://github.com/rosenfeld/oojspec) spec-runner.
+This branch also provides integration with the [oojs](http://github.com/rosenfeld/oojs) gem.
 
 Just copy these files to your (non-Rails) project root and run:
 
-    rake jasmine:spec_helper
-    rake jasmine:spec -- --name=shopping_cart
-    rake jasmine:serve
+    rake oojs:spec_helper
+    rake oojs:spec -- --name=shopping_cart
+    rake oojs:serve
 
 Then browse to http://localhost:5000 and see your specs passing.
 
