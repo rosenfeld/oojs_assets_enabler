@@ -35,12 +35,9 @@ namespace :oojs do
   end
 
   desc "generates a sample spec"
-  task spec: :environment do
-    ARGV.shift
-    if name = ARGV.find{|a| a =~ /^--name=(.+)/}
-      name = name.sub /^--name=/, ''
-    else
-      puts "You must specify the spec name. Use it like rake oojs:spec -- --name=shopping_cart\n\n"
+  task :spec, [:name] => :environment do |t, args|
+    unless name = args[:name]
+      puts "You must specify the spec name. Use it like rake oojs:spec[shopping_cart]\n\n"
       name = '--help'
     end
     Rails::Generators.invoke 'oojs:spec', [name], behavior: :invoke, destination_root: Rails.root

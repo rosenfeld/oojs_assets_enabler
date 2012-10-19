@@ -7,7 +7,7 @@ This branch also provides integration with the [oojs](http://github.com/rosenfel
 Just copy these files to your (non-Rails) project root and run:
 
     rake oojs:spec_helper
-    rake oojs:spec -- --name=shopping_cart
+    rake oojs:spec[shopping_cart]
     rake oojs:serve
 
 Then browse to http://localhost:5000 and see your specs passing.
