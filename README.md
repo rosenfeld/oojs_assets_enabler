@@ -18,3 +18,7 @@ symlink Rakefile to your root app.
 Take a look at [this oojs enabled Grails sample application](https://github.com/rosenfeld/grails-oojs).
 
 Happy coding! :)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rosenfeld/oojs_assets_enabler/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
